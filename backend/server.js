@@ -4,7 +4,17 @@ const cors = require('cors');
 const { VM } = require('vm2');
 
 const app = express();
-const PORT = 3000;
+const PORT = 5000;
+
+// Define a route for the root path
+app.get('/', (req, res) => {
+  res.send('Hello, World!');
+});
+
+// Your other routes and server setup
+app.listen(5000, () => {
+  console.log('Server running on port 5000');
+});
 
 app.use(cors());
 app.use(bodyParser.json());
