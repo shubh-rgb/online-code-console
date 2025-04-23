@@ -33,7 +33,7 @@ COPY --from=build /app/build /usr/share/nginx/html
 COPY nginx/default.conf /etc/nginx/conf.d/
 
 # Expose the default port for HTTP
-EXPOSE 80
+EXPOSE 3000
 
 # Run Nginx in the foreground
 CMD ["nginx", "-g", "daemon off;"]
