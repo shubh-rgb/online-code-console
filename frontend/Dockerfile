@@ -23,17 +23,18 @@ ENV NODE_OPTIONS=--openssl-legacy-provider
 # Build the React app for production
 RUN npm run build
 
-# Step 2: Serve the React app with Nginx
-FROM nginx:alpine
+# # Step 2: Serve the React app with Nginx
+# FROM nginx:alpine
 
-# Copy the build files from the previous stage
-COPY --from=build /app/build /usr/share/nginx/html
+# # Copy the build files from the previous stage
+# COPY --from=build /app/build /usr/share/nginx/html
 
-# Copy the Nginx configuration file
-COPY nginx/default.conf /etc/nginx/conf.d/
+# # Copy the Nginx configuration file
+# COPY nginx/default.conf /etc/nginx/conf.d/
 
 # Expose the default port for HTTP
 EXPOSE 3000
 
 # Run Nginx in the foreground
-CMD ["nginx", "-g", "daemon off;"]
+# CMD ["nginx", "-g", "daemon off;"]
+CMD ["npm", "start"]
