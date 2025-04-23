@@ -6,12 +6,19 @@ WORKDIR /app
 
 # Copy package.json and package-lock.json (or yarn.lock)
 COPY package*.json ./
+# COPY package*.json ./
+COPY craco.config.js ./
+# RUN npm install
+
 
 # Install dependencies
 RUN npm install
 
 # Copy the rest of the app's source code
 COPY . .
+
+# Set this before the build step
+ENV NODE_OPTIONS=--openssl-legacy-provider
 
 # Build the React app for production
 RUN npm run build
