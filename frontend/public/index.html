@@ -1,67 +1,275 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Online JS Console</title>
+  <title>Online Code Console</title>
   <style>
+    /* General body styling */
     body {
-      background: #121212;
-      color: #eee;
-      font-family: monospace;
+      margin: 0;
+      font-family: 'Fira Code', monospace;
+      background: #e3f2fd; /* Light blue background for the body */
+      display: flex;
+      height: 100vh; /* Full viewport height */
+      scroll-behavior: smooth; /* Smooth scrolling */
+    }
+
+    /* Sidebar styling */
+    .sidebar {
+      width: 220px;
+      background-color: #caffbf; /* Light green background */
       padding: 20px;
-    }
-    textarea {
-      width: 100%;
-      height: 200px;
-      background: #1e1e1e;
-      color: #f5f5f5;
-      border: 1px solid #444;
-      padding: 10px;
-    }
-    #output {
-      margin-top: 15px;
-      background: #111;
-      padding: 10px;
-      height: 150px;
+      box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1); /* Light shadow for the sidebar */
       overflow-y: auto;
-      white-space: pre-wrap;
-      border: 1px solid #444;
     }
-    button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      background: #00e676;
-      color: #000;
+
+    /* Sidebar title styling */
+    .sidebar h3 {
+      margin-bottom: 10px;
+    }
+
+    /* Sidebar link list styling */
+    .sidebar ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    /* Sidebar link style */
+    .sidebar-link {
+      text-decoration: none;
+      color: #333;
+      display: block;
+      margin: 8px 0;
+      padding: 6px 10px;
+      border-radius: 5px;
+      transition: background-color 0.2s;
+    }
+
+    /* Sidebar link hover and active state */
+    .sidebar-link:hover,
+    .sidebar-link.active {
+      background-color: #b5f2b5; /* Light green hover effect */
+      color: black;
+    }
+
+    /* Main content area styling */
+    .main {
+      flex: 1;
+      padding: 20px;
+      overflow-y: auto;
+    }
+
+    /* Section styling */
+    section {
+      margin-bottom: 60px;
+    }
+
+    /* Section title styling */
+    .section-title {
+      font-size: 22px;
+      margin-bottom: 10px;
+    }
+
+    /* Console layout: input and output boxes side by side */
+    .console {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 20px;
+    }
+
+    /* Title row for Input and Output */
+    .console-header {
+      display: flex;
+      justify-content: space-between;
+      font-weight: bold;
+    }
+
+    /* Input textarea and output box styling */
+    textarea,
+    pre {
+      background-color: #1e1e1e; /* Dark background for console input and output */
+      color: #d4d4d4; /* Light gray text */
       border: none;
+      border-radius: 8px;
+      padding: 15px;
       font-size: 14px;
+      resize: none;
+      flex: 1;
+      min-height: 200px; /* Minimum height for input and output boxes */
+    }
+
+    /* Output box styling (black background) */
+    pre {
+      background-color: #000; /* Black background for output */
+      color: #fff; /* White text for output */
+    }
+
+    /* Top bar for buttons and language selection */
+    .top-bar {
+      margin-bottom: 10px;
+      display: flex;
+      gap: 10px;
+      align-items: center;
+    }
+
+    /* Styling for the language selection dropdown and button */
+    .top-bar select,
+    .top-bar button {
+      padding: 8px;
+      font-size: 14px;
+    }
+
+    /* Button styling */
+    button {
+      background-color: #007bff; /* Blue button background */
+      color: white;
+      border: none;
+      border-radius: 5px;
       cursor: pointer;
+    }
+
+    /* Button hover effect */
+    button:hover {
+      background-color: #0056b3; /* Darker blue on hover */
+    }
+
+    /* Debugging/compile options below console */
+    .options {
+      margin-top: 10px;
+      display: flex;
+      gap: 15px;
+      justify-content: space-between;
+    }
+
+    .options button {
+      padding: 8px 15px;
+      background-color: #28a745; /* Green background */
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+    }
+
+    .options button:hover {
+      background-color: #218838;
     }
   </style>
 </head>
+
 <body>
+  <!-- Sidebar -->
+  <div class="sidebar">
+    <h3>Index</h3>
+    <ul>
+      <li><a href="#javascript" class="sidebar-link">➤ JavaScript Basics</a></li> <!-- Link to JavaScript Basics section -->
+      <li><a href="#python" class="sidebar-link">➤ Python Loops</a></li> <!-- Link to Python Loops section -->
+      <li><a href="#functions" class="sidebar-link">➤ Functions</a></li> <!-- Link to Functions section -->
+      <li><a href="#examples" class="sidebar-link">➤ Examples</a></li> <!-- Link to Examples section -->
+    </ul>
+  </div>
 
-  <h2>Online JavaScript Console</h2>
-  <textarea id="codeInput" placeholder="Write JavaScript code here..."></textarea>
-  <br />
-  <button onclick="runCode()">Run Code</button>
-  <div id="output">Output will appear here...</div>
+  <!-- Main Content -->
+  <div class="main">
+    <!-- Top bar for language selection and Run Code button -->
+    <div class="top-bar">
+      <select id="language">
+        <option value="python">Python</option> <!-- Python option -->
+        <option value="javascript">JavaScript</option> <!-- JavaScript option -->
+      </select>
+      <button onclick="runCode()">Run Code</button> <!-- Button to trigger the code execution -->
+    </div>
 
+    <!-- Console: where users can write code and see the output -->
+    <div class="console">
+      <!-- Title row for input and output -->
+      <div class="console-header">
+        <span>Input</span>
+        <span>Output</span>
+      </div>
+      <div class="console-body">
+        <textarea id="codeInput" placeholder="Write your code here...">print("Hello World")</textarea> <!-- Text area for inputting code -->
+        <pre id="output">Output will appear here...</pre> <!-- Preformatted text for output -->
+      </div>
+    </div>
+
+    <!-- Options for debugging/compile output -->
+    <div class="options">
+      <button onclick="clearConsole()">Clear Console</button>
+      <button onclick="downloadOutput()">Download Output</button>
+    </div>
+
+    <!-- Sections for content and examples -->
+    <section id="javascript">
+      <h2 class="section-title">JavaScript Basics</h2>
+      <p>This section contains introductory material for JavaScript...</p> <!-- Content for JavaScript Basics -->
+    </section>
+
+    <section id="python">
+      <h2 class="section-title">Python Loops</h2>
+      <p>This section explains for, while loops and examples...</p> <!-- Content for Python Loops -->
+    </section>
+
+    <section id="functions">
+      <h2 class="section-title">Functions</h2>
+      <p>Learn how to write and use functions in Python and JavaScript.</p> <!-- Content for Functions -->
+    </section>
+
+    <section id="examples">
+      <h2 class="section-title">Examples</h2>
+      <p>Here are some ready-to-run code examples in both languages.</p> <!-- Content for Examples -->
+    </section>
+  </div>
+
+  <!-- Script to handle code execution and backend interaction -->
   <script>
+    // Function to run the code written by the user
     async function runCode() {
-      const code = document.getElementById('codeInput').value;
-      const output = document.getElementById('output');
+      const code = document.getElementById('codeInput').value; // Get the code from the input box
+      const language = document.getElementById('language').value; // Get the selected language (Python/JavaScript)
+      const output = document.getElementById('output'); // Output box where results will be displayed
+      output.textContent = 'Running...'; // Display a running message while the code is being processed
 
-      const res = await fetch('/run', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json' },
-        body: JSON.stringify({ code }),
-      });
+      try {
+        // Fetch request to the backend to execute the code
+        const res = await fetch('http://localhost:5000/run', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ code, language }) // Send code and selected language to the backend
+        });
 
-      const result = await res.json();
-      output.innerText = result.output || result.error;
+        // Check if the response is in JSON format
+        const contentType = res.headers.get("content-type");
+        if (!contentType || !contentType.includes("application/json")) {
+          const text = await res.text(); // If not JSON, get the response text (usually error message)
+          throw new Error("Expected JSON but got: " + text.slice(0, 100)); // Throw error if not JSON
+        }
+
+        const result = await res.json(); // Parse the JSON response
+        output.textContent = result.output || result.error || 'No output'; // Display the output or error
+      } catch (err) {
+        output.textContent = 'Error: ' + err.message; // Display error message if something goes wrong
+      }
+    }
+
+    // Clear the console output
+    function clearConsole() {
+      document.getElementById('output').textContent = '';
+    }
+
+    // Download the output as a text file
+    function downloadOutput() {
+      const output = document.getElementById('output').textContent;
+      const blob = new Blob([output], { type: 'text/plain' });
+      const url = URL.createObjectURL(blob);
+      const a = document.createElement('a');
+      a.href = url;
+      a.download = 'output.txt';
+      a.click();
     }
   </script>
 
 </body>
+
 </html>
