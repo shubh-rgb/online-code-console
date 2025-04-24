@@ -1,5 +1,15 @@
-# Step 1: Use Node.js base image
+# Step 1: Use Node.js base image 
 FROM node:18-slim
+
+# Step 2: Install dependencies for Python, Java Runtime, and C
+RUN apt-get update && \
+    apt-get install -y \
+    python3 \
+    gcc \
+    make \
+    curl \
+    openjdk-17-jdk \
+    && apt-get clean
 
 # Set working directory
 WORKDIR /app

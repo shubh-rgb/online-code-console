@@ -160,15 +160,27 @@
 
 <body>
   <!-- Sidebar -->
-  <div class="sidebar">
-    <h3>Index</h3>
-    <ul>
-      <li><a href="#javascript" class="sidebar-link">➤ JavaScript Basics</a></li> <!-- Link to JavaScript Basics section -->
-      <li><a href="#python" class="sidebar-link">➤ Python Loops</a></li> <!-- Link to Python Loops section -->
-      <li><a href="#functions" class="sidebar-link">➤ Functions</a></li> <!-- Link to Functions section -->
-      <li><a href="#examples" class="sidebar-link">➤ Examples</a></li> <!-- Link to Examples section -->
-    </ul>
-  </div>
+<div class="sidebar">
+  <h3>Index</h3>
+  <ul>
+    <li>
+      <a href="#javascript" class="sidebar-link">➤ JavaScript Basics</a> |
+      <a href="javascript-basics.html" class="external-link" target="_blank">[View Full]</a>
+    </li>
+    <li>
+      <a href="#python" class="sidebar-link">➤ Python Loops</a> |
+      <a href="python-loops.html" class="external-link" target="_blank">[View Full]</a>
+    </li>
+    <li>
+      <a href="#functions" class="sidebar-link">➤ Functions</a> |
+      <a href="functions.html" class="external-link" target="_blank">[View Full]</a>
+    </li>
+    <li>
+      <a href="#examples" class="sidebar-link">➤ Examples</a> |
+      <a href="examples.html" class="external-link" target="_blank">[View Full]</a>
+    </li>
+  </ul>
+</div>
 
   <!-- Main Content -->
   <div class="main">
@@ -177,6 +189,8 @@
       <select id="language">
         <option value="python">Python</option> <!-- Python option -->
         <option value="javascript">JavaScript</option> <!-- JavaScript option -->
+        <option value="java">Java</option>
+        <option value="c">C</option>
       </select>
       <button onclick="runCode()">Run Code</button> <!-- Button to trigger the code execution -->
     </div>
@@ -203,7 +217,9 @@
     <!-- Sections for content and examples -->
     <section id="javascript">
       <h2 class="section-title">JavaScript Basics</h2>
-      <p>This section contains introductory material for JavaScript...</p> <!-- Content for JavaScript Basics -->
+      <p>This section contains introductory material for JavaScript including variables, data types, functions, and loops.
+
+        You will learn how to declare variables using let, const, and var, work with arrays and objects, and understand how JavaScript executes code asynchronously using callbacks and promises.</p> <!-- Content for JavaScript Basics -->
     </section>
 
     <section id="python">
