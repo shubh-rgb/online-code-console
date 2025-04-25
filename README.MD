@@ -1,0 +1,61 @@
+# Online Code console
+
+An online code console supporting multiple programming languages for testing and running code snippets.
+
+## Table of Contents
+
+- [Installation](#installation)
+- [Usage](#usage)
+- [Features](#features)
+- [Scripts](#scripts)
+- [Contributing](#contributing)
+- [License](#license)
+
+## Installation
+
+To get started, clone the repository and install the dependencies:
+
+```bash
+git clone <repository-url>
+cd <project-directory>
+npm install
+```
+
+## Usage
+
+To start the development server:
+
+```bash
+npm start
+```
+
+To build the project for production:
+
+```bash
+npm run build
+```
+
+## Features
+
+- Feature 1
+- Feature 2
+- Feature 3
+
+## Scripts
+
+Here are the available npm scripts:
+
+- `npm start`: Starts the development server.
+- `npm run build`: Builds the app for production.
+- `npm test`: Runs the test suite.
+
+## Contributing
+
+Contributions are welcome! Please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the [MIT License](LICENSE).
+```
+
+Replace placeholders like `<repository-url>` and `<project-directory>` with actual values. Add more details as needed.
