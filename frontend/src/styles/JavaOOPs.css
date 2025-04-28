@@ -1,0 +1,44 @@
+.java-oops {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .java-oops h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  
+  .java-oops p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+  
+  .java-oops h2 {
+    color: #34495e;
+    margin-top: 2rem;
+  }
+  
+  .java-oops ul {
+    list-style: disc;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .java-oops li {
+    margin-bottom: 0.7rem;
+    color: #333;
+  }
+  
+  .java-oops pre {
+    background: #1e1e1e;
+    color: #eee;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: monospace;
+    margin-bottom: 1rem;
+  }
+  

@@ -1,54 +1,42 @@
-import React, { useState } from 'react';
-import './App.css';
-// import axios from 'axios';
+// src/App.js
+import React from 'react';
+import './styles/App.css';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
-const CodeConsole = () => {
-  const [code, setCode] = useState('');
-  const [language, setLanguage] = useState('javascript'); // Default language
-  const [output, setOutput] = useState('');
+import Layout from './components/Layout';
+import HomePage from './pages/HomePage';
+import ConsolePage from './pages/ConsolePage';
+import JavaScriptBasicsPage from './pages/JavaScriptBasicsPage';
+import AboutPage from './pages/AboutPage';
+import TopicsPage from './pages/TopicsPage';
+import ExamplesPage from './pages/ExamplesPage';
+import CProgrammingPage from './pages/CProgrammingPage';
+import Functions from './pages/Functions';
+import JavaOOPs from './pages/JavaOOPs';
+import PythonLoops from './pages/PythonLoops';
 
-  const runCode = async () => {
-    try {
-      const res = await axios.post('http://localhost:5000/run', {
-        code,
-        language,
-      });
-      setOutput(res.data.output || res.data.error);
-    } catch (err) {
-      setOutput('Server Error');
-    }
-  };
+// Import other pages when needed (ConsolePage, AboutPage, etc.)
 
+function App() {
   return (
-    <div style={{ padding: 20 }}>
-      <h2>🧪 Online Code Console</h2>
-
-      <label>
-        <strong>Select Language:</strong>{' '}
-        <select value={language} onChange={(e) => setLanguage(e.target.value)}>
-          <option value="javascript">JavaScript</option>
-          <option value="python">Python</option>
-        </select>
-      </label>
-
-      <textarea
-        rows="10"
-        cols="80"
-        value={code}
-        onChange={(e) => setCode(e.target.value)}
-        placeholder="Write your code here..."
-        style={{ display: 'block', marginTop: 10 }}
-      />
-
-      <button onClick={runCode} style={{ marginTop: 10 }}>
-        ▶ Run
-      </button>
-
-      <pre style={{ backgroundColor: '#f4f4f4', padding: 10, marginTop: 10 }}>
-        <strong>Output:</strong>{'\n'}{output}
-      </pre>
-    </div>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<HomePage />} />
+          <Route path="/console" element={<ConsolePage />} />
+          <Route path="/javascript-basics" element={<JavaScriptBasicsPage />} /> {/* ✅ new route */}
+          <Route path="/about" element={<AboutPage />} />
+          <Route path="/topics" element={<TopicsPage />} />
+          <Route path="/examples" element={<ExamplesPage />} />
+          <Route path="/c-programming" element={<CProgrammingPage />} />
+          <Route path="/functions" element={<Functions />} />
+          <Route path="/java-oops" element={<JavaOOPs />} />
+          <Route path="/python-loops" element={<PythonLoops />} />
+          {/* Add other routes here later */}
+        </Routes>
+      </Layout>
+    </Router>
   );
-};
+}
 
-export default CodeConsole;
+export default App;

@@ -1,0 +1,39 @@
+[
+    {
+      "id": "javascript",
+      "title": "JavaScript Basics",
+      "description": "Learn about variables, functions, and asynchronous programming.",
+      "fullPageLink": "/javascript-basics.html"
+    },
+    {
+      "id": "python",
+      "title": "Python Loops",
+      "description": "Master for-loops, while-loops, and iteration patterns.",
+      "fullPageLink": "/python-loops.html"
+    },
+    {
+      "id": "functions",
+      "title": "Functions",
+      "description": "Understand how to write reusable functions in JS and Python.",
+      "fullPageLink": "/functions.html"
+    },
+    {
+      "id": "examples",
+      "title": "Examples",
+      "description": "See ready-to-run examples across languages.",
+      "fullPageLink": "/examples.html"
+    },
+    {
+      "id": "java-oops",
+      "title": "Java OOPs Concepts",
+      "description": "Learn Object Oriented Programming in Java (Classes, Objects, Inheritance).",
+      "fullPageLink": "/java-oops.html"
+    },
+    {
+      "id": "c-programming",
+      "title": "C Programming Basics",
+      "description": "Understand variables, loops, and structure in C language.",
+      "fullPageLink": "/c-programming.html"
+    }
+  ]
+  

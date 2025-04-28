@@ -1,0 +1,45 @@
+.c-programming-page {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .c-programming-page h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  
+  .c-programming-page p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+  
+  .c-programming-page h2 {
+    color: #34495e;
+    margin-top: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .c-programming-page ul {
+    list-style: disc;
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+  }
+  
+  .c-programming-page li {
+    margin-bottom: 0.5rem;
+    color: #333;
+  }
+  
+  .c-programming-page pre {
+    background: #1e1e1e;
+    color: #eee;
+    padding: 1rem;
+    border-radius: 6px;
+    overflow-x: auto;
+    font-family: monospace;
+    margin-bottom: 1rem;
+  }
+  

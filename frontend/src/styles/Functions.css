@@ -1,0 +1,28 @@
+.functions-page {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .functions-page h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  
+  .functions-page p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+  
+  .functions-page ul {
+    list-style: disc;
+    margin-left: 2rem;
+  }
+  
+  .functions-page li {
+    margin-bottom: 0.7rem;
+    color: #333;
+  }
+  

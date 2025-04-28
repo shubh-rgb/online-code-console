@@ -1,0 +1,28 @@
+.javascript-basics-page {
+    padding: 2rem;
+    max-width: 900px;
+    margin: auto;
+  }
+  
+  .javascript-basics-page h1 {
+    font-size: 2rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+  }
+  
+  .javascript-basics-page p {
+    font-size: 1rem;
+    color: #555;
+    margin-bottom: 1.5rem;
+  }
+  
+  .javascript-basics-page ul {
+    list-style: disc;
+    margin-left: 2rem;
+  }
+  
+  .javascript-basics-page li {
+    margin-bottom: 0.7rem;
+    color: #333;
+  }
+  

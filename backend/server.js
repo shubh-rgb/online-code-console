@@ -166,4 +166,55 @@ app.post('/run', (req, res) => {
   }
 });
 
+
+const passport = require('passport');
+const GoogleStrategy = require('passport-google-oauth20').Strategy;
+const cookieSession = require('cookie-session');
+
+
+// Session middleware
+app.use(cookieSession({
+  name: 'session',
+  keys: ['your_secret_key'],
+  maxAge: 24 * 60 * 60 * 1000 // 1 day
+}));
+
+app.use(passport.initialize());
+app.use(passport.session());
+
+// Passport configuration
+passport.use(new GoogleStrategy({
+  clientID: 'YOUR_GOOGLE_CLIENT_ID',
+  clientSecret: 'YOUR_GOOGLE_CLIENT_SECRET',
+  callbackURL: '/auth/google/callback'
+},
+(accessToken, refreshToken, profile, done) => {
+  done(null, profile);
+}));
+
+passport.serializeUser((user, done) => {
+  done(null, user);
+});
+passport.deserializeUser((obj, done) => {
+  done(null, obj);
+});
+
+// Routes
+app.get('/auth/google',
+  passport.authenticate('google', { scope: ['profile', 'email'] })
+);
+
+app.get('/auth/google/callback',
+  passport.authenticate('google', { failureRedirect: '/' }),
+  (req, res) => {
+    res.redirect('/'); // Redirect after successful login
+  }
+);
+
+app.get('/logout', (req, res) => {
+  req.logout(() => {
+    res.redirect('/');
+  });
+});
+
 app.listen(5000, () => console.log('Server running on port 5000'));

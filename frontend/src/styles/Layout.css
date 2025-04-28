@@ -1,0 +1,82 @@
+/* src/styles/Layout.css */
+
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 250px;
+  background-color: #2c3e50;
+  color: white;
+  padding: 1rem;
+  min-height: 100vh; /* Optional, but ensures sidebar is full height */
+  position: sticky;
+  top: 0;
+  height: 100vh;
+  overflow-y: auto;
+  transition: all 0.3s ease;
+}
+
+.sidebar-links {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.sidebar-links li {
+  margin-bottom: 1rem;
+}
+
+.sidebar-links a {
+  color: white;
+  text-decoration: none;
+}
+
+/* sidebar hidden state (when collapsed) */
+.sidebar-collapsed .sidebar {
+  display: none;
+}
+
+.sidebar-links a:hover {
+  text-decoration: underline;
+  color: #1abc9c;
+}
+
+.main-content {
+  flex: 1;
+  background-color: #f8f9fb;
+  padding: 2rem;
+  transition: all 0.3s ease;
+}
+/* Mobile Responsive: Collapse Sidebar */
+@media (max-width: 768px) {
+  .layout-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    height: auto;
+    position: relative;
+    background-color: #2c3e50;
+    padding: 1rem;
+  }
+
+  .main-content {
+    flex: none;
+    width: 100%;
+    padding: 1rem;
+  }
+
+  .sidebar-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+  }
+
+  .sidebar-links li {
+    margin: 0;
+  }
+}
