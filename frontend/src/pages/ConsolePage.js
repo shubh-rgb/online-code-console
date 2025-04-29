@@ -9,7 +9,7 @@ const ConsolePage = () => {
   const [output, setOutput] = useState('');
   const [showModal, setShowModal] = useState(false);
 
-  const BASE_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+  const BASE_URL = process.env.REACT_APP_BACKEND_URL || window.location.origin;
 
   const runCode = async () => {
     setOutput('Running...');
