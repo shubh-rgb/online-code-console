@@ -53,19 +53,6 @@ body {
     background-color: #575757;
 }
 
-/* Sidebar */
-.sidebar {
-    width: 220px;
-    background-color: #caffbf;
-    padding: 70px 20px 20px; /* Top padding to clear navbar */
-    box-shadow: 2px 0 4px rgba(0, 0, 0, 0.1);
-    height: 100vh;
-    overflow-y: auto;
-    position: fixed;
-    top: 0;
-    left: 0;
-}
-
 .sidebar h3 {
     margin-bottom: 10px;
 }

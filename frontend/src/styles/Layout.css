@@ -18,6 +18,10 @@
   transition: all 0.3s ease;
 }
 
+.sidebar h3 {
+  margin-bottom: 1rem;
+}
+
 .sidebar-links {
   list-style: none;
   padding: 0;
@@ -29,8 +33,12 @@
 }
 
 .sidebar-links a {
-  color: white;
+  color: #cccccc;
   text-decoration: none;
+  display: block;
+  padding: 8px;
+  border-radius: 6px;
+  transition: background 0.3s, color 0.3s;
 }
 
 /* sidebar hidden state (when collapsed) */
