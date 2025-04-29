@@ -9,11 +9,13 @@ const ConsolePage = () => {
   const [output, setOutput] = useState('');
   const [showModal, setShowModal] = useState(false);
 
+  const BASE_URL = process.env.REACT_APP_BACKEND_URL || 'http://localhost:5000';
+
   const runCode = async () => {
     setOutput('Running...');
 
     try {
-      const res = await fetch('http://localhost:5000/run', {
+        const res = await fetch(`${BASE_URL}/run`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ code, language })
