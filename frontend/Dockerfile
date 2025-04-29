@@ -6,9 +6,9 @@ WORKDIR /app
 
 # Copy package.json and package-lock.json (or yarn.lock)
 COPY package*.json ./
-# COPY package*.json ./
+
 COPY craco.config.js ./
-# RUN npm install
+
 
 
 # Install dependencies
@@ -24,17 +24,10 @@ ENV NODE_OPTIONS=--openssl-legacy-provider
 RUN npm run build
 
 # # Step 2: Serve the React app with Nginx
-# FROM nginx:alpine
+FROM nginx:alpine
 
-# # Copy the build files from the previous stage
-# COPY --from=build /app/build /usr/share/nginx/html
+COPY --from=build /app/build /usr/share/nginx/html
+COPY nginx/default.conf /etc/nginx/conf.d/default.conf
 
-# # Copy the Nginx configuration file
-# COPY nginx/default.conf /etc/nginx/conf.d/
-
-# Expose the default port for HTTP
-EXPOSE 3000
-
-# Run Nginx in the foreground
-# CMD ["nginx", "-g", "daemon off;"]
-CMD ["npm", "start"]
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
