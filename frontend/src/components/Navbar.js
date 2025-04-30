@@ -1,5 +1,7 @@
 // src/components/Navbar.js
 import React from 'react';
+import { Link } from 'react-router-dom'; // ✅ Add this line
+
 
 const Navbar = ({ toggleTheme, currentTheme }) => (
   <nav className="navbar">
