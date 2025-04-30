@@ -4,13 +4,13 @@ import React from 'react';
 const Navbar = ({ toggleTheme, currentTheme }) => (
   <nav className="navbar">
     <ul className="nav-links">
-      <li><a href="#home">Home</a></li>
-      <li><a href="#compiler">Code Editor</a></li>
-      <li><a href="#languages">Languages</a></li>
-      <li><a href="#examples">Examples</a></li>
-      <li><a href="#community">Community Forum</a></li>
-      <li><a href="#about">About Us</a></li>
-      <li><button onClick={() => alert('Login Modal Placeholder')}>Login</button></li>
+        <li><Link to="/">Home</Link></li>
+        <li><Link to="/console">Code Editor</Link></li>
+        <li><Link to="/topics">Languages</Link></li>
+        <li><Link to="/examples">Examples</Link></li>
+        <li><Link to="/community">Community Forum</Link></li>
+        <li><Link to="/about">About Us</Link></li>
+        <li><button onClick={() => alert('Login Modal Placeholder')}>Login</button></li>
       <li>
         <button onClick={toggleTheme} className="theme-toggle-btn">
           {currentTheme === 'light' ? '🌙 Dark' : '☀ Light'}
