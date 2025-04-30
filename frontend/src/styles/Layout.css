@@ -51,6 +51,20 @@
   color: #1abc9c;
 }
 
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 220px;
+  right: 0;
+  height: 60px;
+  background-color: #1a1a1a;
+  display: flex;
+  align-items: center;
+  padding: 0 1rem;
+  z-index: 1000;
+  color: white;
+}
+
 .main-content {
   flex: 1;
   background-color: #f8f9fb;
