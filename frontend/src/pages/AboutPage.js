@@ -20,7 +20,7 @@ const AboutPage = () => {
       {/* Hero Header */}
       <section className="hero fade-in">
         <div className="hero-content">
-          <h1>About Online Code Console</h1>
+          <h1>About Knowledge Craft</h1>
           <p>Empowering learners around the world to code smarter, faster, and better — right from their browser.</p>
         </div>
       </section>

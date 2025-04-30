@@ -25,7 +25,7 @@ const HomePage = () => {
       {/* Hero / Intro Section */}
       <section className="hero fade-in">
         <div className="hero-content">
-          <h1>Welcome to Online Code Console</h1>
+          <h1>Welcome to Knowledge Craft.</h1>
           <p>
             Learn, write, and execute code in real-time — right in your browser. 
             Master languages like <strong>Python, JavaScript, Java, and C</strong> with interactive examples and an instant code editor.
@@ -49,8 +49,15 @@ const HomePage = () => {
             <h3>📚 Learn by Example</h3>
             <p>Access curated topics with syntax, examples, and real outputs.</p>
           </div>
-        </div>
+        </div>  
       </section>
+
+        {/* Call to Action */}
+        <section className="fade-in cta-section">
+                <h2>Ready to Start Coding?</h2>
+                <p>Join thousands of learners — improve your coding skills from anywhere.</p>
+                <Link to="/console" className="btn btn-primary">Start Coding</Link>
+        </section>
 
       {/* Topics Section */}
       <section id="topics" className="topics-section fade-in">
@@ -66,16 +73,11 @@ const HomePage = () => {
         </ul>
       </section>
 
-      {/* Call to Action */}
-      <section className="fade-in cta-section">
-        <h2>Ready to Start Coding?</h2>
-        <p>Join thousands of learners — improve your coding skills from anywhere.</p>
-        <Link to="/console" className="btn btn-primary">Start Coding</Link>
-      </section>
+      
 
       {/* Footer */}
       <footer className="fade-in">
-        <p>&copy; 2025 Online Code Console. Built with ❤️ for coders.</p>
+        <p>&copy; 2025 - Knowledge craft. Built with ❤️ for coders.</p>
       </footer>
 
     </div>

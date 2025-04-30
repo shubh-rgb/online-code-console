@@ -8,7 +8,7 @@ const Navbar = ({ toggleTheme, currentTheme }) => (
     <ul className="nav-links">
         <li><Link to="/">Home</Link></li>
         <li><Link to="/console">Code Editor</Link></li>
-        <li><Link to="/topics">Languages</Link></li>
+        <li><Link to="/topics">Explore</Link></li>
         <li><Link to="/examples">Examples</Link></li>
         <li><Link to="/community">Community Forum</Link></li>
         <li><Link to="/about">About Us</Link></li>

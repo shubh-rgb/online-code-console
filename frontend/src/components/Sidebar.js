@@ -9,12 +9,12 @@ const Sidebar = () => {
       <h3>📚 Index</h3>
       <ul className="sidebar-links">
         <li><Link to="/">🏠 Home</Link></li>
-        <li><Link to="/console">💻 Console</Link></li>
-        <li><Link to="/examples">📝 Examples</Link></li>
+        <li><Link to="/console">💻 Code Editor</Link></li>
         <li><Link to="/topics">📚 Topics</Link></li>
-        <li><Link to="/about">ℹ️ About Us</Link></li>
-        <li><a href="/auth/google">🔑 Login with Google</a></li>
+        <li><Link to="/examples">📝 Examples</Link></li>
         <li><Link to="/git-cheat-sheet">🔧 Git Cheat Sheet</Link></li>
+        <li><a href="/auth/google">🔑 Login</a></li>
+        <li><Link to="/about">ℹ️ About Us</Link></li>
       </ul>
     </aside>
   );
