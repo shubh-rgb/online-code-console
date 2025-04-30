@@ -14,6 +14,7 @@ import CProgrammingPage from './pages/CProgrammingPage';
 import Functions from './pages/Functions';
 import JavaOOPs from './pages/JavaOOPs';
 import PythonLoops from './pages/PythonLoops';
+import GitCheatSheet from './pages/GitCheatSheet';
 
 // Import other pages when needed (ConsolePage, AboutPage, etc.)
 
@@ -32,6 +33,7 @@ function App() {
           <Route path="/functions" element={<Functions />} />
           <Route path="/java-oops" element={<JavaOOPs />} />
           <Route path="/python-loops" element={<PythonLoops />} />
+          <Route path="/git-cheat-sheet" element={<GitCheatSheet />} />
           {/* Add other routes here later */}
         </Routes>
       </Layout>

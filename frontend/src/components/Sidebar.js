@@ -14,6 +14,7 @@ const Sidebar = () => {
         <li><Link to="/topics">📚 Topics</Link></li>
         <li><Link to="/about">ℹ️ About Us</Link></li>
         <li><a href="/auth/google">🔑 Login with Google</a></li>
+        <li><Link to="/git-cheat-sheet">🔧 Git Cheat Sheet</Link></li>
       </ul>
     </aside>
   );

@@ -1,0 +1,43 @@
+.git-page {
+    max-width: 800px;
+    margin: auto;
+    padding: 2rem;
+    background-color: #f4f4f9;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
+    line-height: 1.6;
+  }
+  
+  .git-page h1 {
+    color: #2c3e50;
+    font-size: 2rem;
+    margin-bottom: 1rem;
+  }
+  
+  .git-page h2 {
+    color: #007acc;
+    margin-top: 2rem;
+  }
+  
+  .git-page pre {
+    background-color: #1e1e1e;
+    color: #d4d4d4;
+    padding: 1rem;
+    border-radius: 8px;
+    overflow-x: auto;
+  }
+  
+  .git-page code {
+    font-family: 'Fira Code', monospace;
+    font-size: 0.95rem;
+  }
+  
+  .git-page ul {
+    margin-left: 1.5rem;
+  }
+  
+  .git-footer {
+    margin-top: 3rem;
+    font-size: 0.9rem;
+    text-align: center;
+  }
+  

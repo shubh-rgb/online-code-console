@@ -62,6 +62,7 @@ const HomePage = () => {
           <li><Link to="/examples">Code Examples</Link></li>
           <li><Link to="/java-oops">Java OOPs Concepts</Link></li>
           <li><Link to="/c-programming">C Programming Basics</Link></li>
+          <li><Link to="/git-cheat-sheet">🔧 Git Cheat Sheet</Link></li>
         </ul>
       </section>
 

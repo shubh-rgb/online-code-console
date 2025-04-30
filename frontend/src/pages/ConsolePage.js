@@ -95,6 +95,7 @@ const ConsolePage = () => {
           <li><Link to="/python-loops">Python Loops</Link></li>
           <li><Link to="/functions">Functions</Link></li>
           <li><Link to="/examples">Examples</Link></li>
+          <li><Link to="/git-cheat-sheet">🔧 Git Cheat Sheet</Link></li>
         </ul>
       </section>
 

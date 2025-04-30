@@ -35,6 +35,7 @@ const TopicsPage = () => {
           <li><a href="/example.html">Code Examples</a> – Ready-to-use snippets and simple logic programs</li>
           <li><a href="/java-oops.html">Java OOPs Concepts</a> – Classes, Objects, Inheritance, Polymorphism</li>
           <li><a href="/c-programming.html">C Programming Basics</a> – Variables, Conditions, Loops, Functions</li>
+          
         </ul>
       </section>
 
