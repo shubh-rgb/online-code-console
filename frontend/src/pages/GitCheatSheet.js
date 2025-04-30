@@ -1,6 +1,6 @@
 // GitCheatSheet.js
 import React from 'react';
-import './GitCheatSheet.css';
+import '../styles/GitCheatSheet.css';
 
 const GitCheatSheet = () => {
   return (
