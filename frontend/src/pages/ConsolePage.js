@@ -57,12 +57,6 @@ const ConsolePage = () => {
         </div>
       )}
 
-      {/* Google Login */}
-      <div className="centered">
-        <a href="/auth/google"><button className="btn google-btn">Login with Google</button></a>
-        <button onClick={() => setShowModal(true)} className="btn">Login</button>
-      </div>
-
       {/* Console UI */}
       <main className="console-wrapper">
         <div className="top-bar">

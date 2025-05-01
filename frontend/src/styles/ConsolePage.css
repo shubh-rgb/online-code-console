@@ -1,19 +1,24 @@
-/* Layout for the console area */
+/* -------------------------------
+   Console Page Layout
+--------------------------------- */
 .console-page {
     padding: 2rem;
     max-width: 900px;
     margin: auto;
+    font-family: 'Segoe UI', Tahoma, sans-serif;
   }
   
-  /* Button styles */
+  /* -------------------------------
+     Button Styles
+  --------------------------------- */
   .btn {
     padding: 0.6rem 1.2rem;
     border: none;
     border-radius: 5px;
     font-weight: bold;
-    margin-right: 10px;
-    cursor: pointer;
     font-size: 0.95rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
   .btn-primary {
@@ -21,17 +26,22 @@
     color: white;
   }
   
+  .btn-primary:hover {
+    background-color: #1a242f;
+  }
+  
   .btn-blue {
     background-color: #3498db;
     color: white;
   }
   
-  .btn-google {
-    background-color: #db4437;
-    color: white;
+  .btn-blue:hover {
+    background-color: #2a7cbf;
   }
   
-  /* Top bar buttons and selector */
+  /* -------------------------------
+     Top Bar (Language Select & Buttons)
+  --------------------------------- */
   .top-bar {
     display: flex;
     align-items: center;
@@ -40,7 +50,9 @@
     flex-wrap: wrap;
   }
   
-  /* Console input/output area */
+  /* -------------------------------
+     Code Editor & Output
+  --------------------------------- */
   .console-area {
     display: flex;
     flex-direction: column;
@@ -56,7 +68,7 @@
     padding: 1rem;
     border: none;
     border-radius: 6px;
-    background-color: #000;
+    background-color: #1e1e1e;
     color: #f8f8f2;
     resize: vertical;
   }
@@ -72,13 +84,9 @@
     overflow-x: auto;
   }
   
-  /* Centered Google login */
-  .centered {
-    text-align: center;
-    margin: 1.5rem 0;
-  }
-  
-  /* Topics section */
+  /* -------------------------------
+     Topics Section
+  --------------------------------- */
   .topics-section {
     margin-top: 3rem;
     padding: 2rem;
@@ -102,9 +110,11 @@
   .topics-section a {
     text-decoration: none;
     color: #2c3e50;
+    transition: color 0.2s ease;
   }
   
   .topics-section a:hover {
     text-decoration: underline;
+    color: #1a1a1a;
   }
   
