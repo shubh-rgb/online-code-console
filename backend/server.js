@@ -170,6 +170,9 @@ app.post('/run', (req, res) => {
 const passport = require('passport');
 const GoogleStrategy = require('passport-google-oauth20').Strategy;
 const cookieSession = require('cookie-session');
+const session = require('express-session');
+
+require('dotenv').config();
 
 
 // Session middleware
@@ -179,17 +182,22 @@ app.use(cookieSession({
   maxAge: 24 * 60 * 60 * 1000 // 1 day
 }));
 
+app.use(session({
+  secret: process.env.SESSION_SECRET,
+  resave: false,
+  saveUninitialized: true
+}));
+
 app.use(passport.initialize());
 app.use(passport.session());
 
 // Passport configuration
 passport.use(new GoogleStrategy({
-  clientID: 'YOUR_GOOGLE_CLIENT_ID',
-  clientSecret: 'YOUR_GOOGLE_CLIENT_SECRET',
+  clientID: process.env.GOOGLE_CLIENT_ID,
+  clientSecret: process.env.GOOGLE_CLIENT_SECRET,
   callbackURL: '/auth/google/callback'
-},
-(accessToken, refreshToken, profile, done) => {
-  done(null, profile);
+}, (accessToken, refreshToken, profile, done) => {
+  return done(null, profile);
 }));
 
 passport.serializeUser((user, done) => {
@@ -215,6 +223,14 @@ app.get('/logout', (req, res) => {
   req.logout(() => {
     res.redirect('/');
   });
+});
+
+app.get('/api/me', (req, res) => {
+  if (req.isAuthenticated()) {
+    res.json({ user: req.user });
+  } else {
+    res.json({ user: null });
+  }
 });
 
 app.listen(5000, () => console.log('Server running on port 5000'));
