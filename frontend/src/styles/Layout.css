@@ -51,22 +51,25 @@
   color: #1abc9c;
 }
 
+/* Navbar Container */
 .navbar {
   position: fixed;
   top: 0;
-  left: 0;
+  left: 250px; /* Match your sidebar width */
   right: 0;
   height: 60px;
-  background-color: #283c50; 
+  background-color: #283c50;
   display: flex;
+  justify-content: space-between; /* Align left and right sections */
   align-items: center;
-  padding: 0 1rem;
+  padding: 0 1.5rem;
   z-index: 1000;
   color: white;
-  border-bottom: 1px solid #445364; /* optional: visual separation */
+  border-bottom: 1px solid #445364;
 }
 
-.nav-links {
+/* Left-aligned links */
+.navbar-left .nav-links {
   list-style: none;
   display: flex;
   gap: 1.5rem;
@@ -75,12 +78,20 @@
   align-items: center;
 }
 
-.nav-links li {
+/* Right-aligned actions (login, theme switch) */
+.navbar-right .nav-actions {
+  list-style: none;
+  display: flex;
+  gap: 1rem;
   margin: 0;
+  padding: 0;
+  align-items: center;
 }
 
+/* Common link/button styling */
 .nav-links a,
-.nav-links button {
+.nav-actions a,
+.nav-actions button {
   color: white;
   text-decoration: none;
   background: none;
@@ -89,15 +100,33 @@
   font-size: 1rem;
 }
 
-.nav-links button {
+/* Primary button */
+.nav-actions button {
   padding: 0.4rem 0.6rem;
   border-radius: 4px;
   background-color: #007acc;
   color: white;
 }
 
-.nav-links button:hover {
+.nav-actions button:hover {
   background-color: #005f9e;
+}
+
+/* Responsive improvement */
+@media (max-width: 768px) {
+  .navbar {
+    left: 0; /* sidebar collapses */
+    padding: 0 1rem;
+    flex-direction: column;
+    height: auto;
+  }
+
+  .navbar-left,
+  .navbar-right {
+    width: 100%;
+    justify-content: center;
+    margin: 0.5rem 0;
+  }
 }
 
 .main-content {

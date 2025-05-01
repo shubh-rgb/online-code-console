@@ -12,6 +12,7 @@
     "vm2": "^3.9.19",
     "passport": "^0.6.0",
     "passport-google-oauth20": "^2.0.0",
-    "cookie-session": "^2.0.0"
+    "cookie-session": "^2.0.0",
+    "express-session": "^1.18.1"
   }
 }
