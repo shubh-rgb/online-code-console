@@ -1,7 +1,7 @@
 // src/components/Navbar.js
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { auth, provider, signInWithPopup, signOut, onAuthStateChanged } from '../firebase';
+import { auth, provider, signInWithPopup, signOut, onAuthStateChanged } from './firebase';
 
 const Navbar = ({ toggleTheme, currentTheme }) => {
   const [user, setUser] = useState(null);
