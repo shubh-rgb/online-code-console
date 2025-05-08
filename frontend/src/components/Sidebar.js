@@ -3,9 +3,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import '../styles/App.css'; // optional
 
-const Sidebar = () => {
+const Sidebar = ({ visible }) => {
   return (
-    <aside className="sidebar">
+    <aside className={`sidebar ${visible ? 'show' : 'hide'}`}>
       <h3>📚 Index</h3>
       <ul className="sidebar-links">
         <li><Link to="/">🏠 Home</Link></li>
@@ -13,7 +13,6 @@ const Sidebar = () => {
         <li><Link to="/topics">📚 Topics</Link></li>
         <li><Link to="/examples">📝 Examples</Link></li>
         <li><Link to="/git-cheat-sheet">🔧 Git Cheat Sheet</Link></li>
-        <li><a href="/auth/google">🔑 Login</a></li>
         <li><Link to="/about">ℹ️ About Us</Link></li>
       </ul>
     </aside>

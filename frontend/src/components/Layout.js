@@ -4,17 +4,22 @@ import Navbar from './Navbar';
 import '../styles/Layout.css'; // Adjust if needed
 
 const Layout = ({ children }) => {
+  const [sidebarVisible, setSidebarVisible] = useState(false);
+
+  const toggleSidebar = () => {
+    setSidebarVisible(!sidebarVisible);
+  };
+
   return (
-    <>
-        <Navbar />
-        <div className="layout-container">
-            <Sidebar />
-            {/* </aside> */}
-            <div className="main-content">
-                {children}
-        </div>
-        </div>
-    </>
+    <div className="layout-container">
+      <button className="hamburger" onClick={toggleSidebar}>
+        ☰
+      </button>
+      <Sidebar visible={sidebarVisible} />
+      <div className={`main-content ${sidebarVisible ? 'shift' : ''}`}>
+        {children}
+      </div>
+    </div>
   );
 };
 

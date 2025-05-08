@@ -18,6 +18,14 @@
   transition: all 0.3s ease;
 }
 
+.sidebar.show {
+  transform: translateX(0);
+}
+
+.sidebar.hide {
+  transform: translateX(-100%);
+}
+
 .sidebar h3 {
   margin-bottom: 1rem;
 }
@@ -49,6 +57,20 @@
 .sidebar-links a:hover {
   text-decoration: underline;
   color: #1abc9c;
+}
+
+/* Hamburger button */
+.hamburger {
+  position: fixed;
+  top: 15px;
+  left: 15px;
+  z-index: 1100;
+  background: #2c3e50;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
 /* Navbar Container */
@@ -133,8 +155,26 @@
   flex: 1;
   background-color: #f8f9fb;
   padding: 2rem;
-  transition: all 0.3s ease;
+  margin-left: 0;
+  transition: margin-left 0.3s ease-in-out;
 }
+
+
+.main-content.shift {
+  margin-left: 250px;
+}
+
+@media (max-width: 768px) {
+  .main-content.shift {
+    margin-left: 0;
+  }
+
+  .sidebar {
+    top: 0;
+  }
+}
+
+
 /* Mobile Responsive: Collapse Sidebar */
 @media (max-width: 768px) {
   .layout-container {
