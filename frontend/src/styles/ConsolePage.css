@@ -2,11 +2,12 @@
    Console Page Layout
 --------------------------------- */
 .console-page {
-    padding: 2rem;
-    max-width: 900px;
-    margin: auto;
-    font-family: 'Segoe UI', Tahoma, sans-serif;
-  }
+  padding: 2rem 3rem;
+  width: 100%;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #fdfdfd;
+}
   
   /* -------------------------------
      Button Styles
@@ -44,10 +45,12 @@
   --------------------------------- */
   .top-bar {
     display: flex;
+    justify-content: space-between;
     align-items: center;
     gap: 1rem;
     margin-bottom: 1rem;
     flex-wrap: wrap;
+    gap: 1rem;
   }
   
   /* -------------------------------
@@ -71,6 +74,7 @@
     background-color: #1e1e1e;
     color: #f8f8f2;
     resize: vertical;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
   }
   
   .console-area pre {
@@ -92,15 +96,19 @@
     padding: 2rem;
     background: #f4f6f8;
     border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
   }
   
   .topics-section h2 {
     margin-bottom: 1rem;
+    font-size: 1.3rem;
   }
   
   .topics-section ul {
     list-style: none;
     padding-left: 0;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    display: grid;
   }
   
   .topics-section li {

@@ -4,6 +4,8 @@ import '../styles/UserProfileForm.css';
 import { db } from '../firebase'; // assuming you've exported db from firebase.js
 import { doc, setDoc } from 'firebase/firestore';
 import { getAuth } from 'firebase/auth';
+import { auth, provider, signInWithPopup, signOut, onAuthStateChanged } from '../firebase';
+
 
 const auth = getAuth();
 

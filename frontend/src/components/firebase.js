@@ -13,6 +13,9 @@ import {
   onAuthStateChanged,
 } from "firebase/auth";
 
+// import { auth, provider, signInWithPopup, signOut, onAuthStateChanged } from '../firebase';
+
+
 const firebaseConfig = {
   apiKey: "AIzaSyCcRWQmLbZDNA11cD1fBYye1kAV2cPaCoA",
   authDomain: "knowledge-craft-f1ce2.firebaseapp.com",
